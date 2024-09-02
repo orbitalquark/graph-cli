@@ -303,6 +303,9 @@ def fill_global_args(args, df):
     # legend-ncols
     args.legend_ncols = (args.legend_ncols, args.legend_ncols is not None)
 
+    # transparent-bg
+    args.transparent_bg = (args.transparent_bg, args.transparent_bg)
+
 # replace None in array with value from default_vals
 def fill_list(lst, default_vals=None, length=None, map_fn=None):
     if type(lst) is not list:
@@ -453,6 +456,8 @@ def parse_args():
             help='disable tight layout')
     parser.add_argument('--legend-ncols', type=int, default=1,
             help='legend number of columns')
+    parser.add_argument('--transparent-bg', action='store_true',
+            help='save graphs with a transparent background')
     parser.add_argument('--chain', '-C', action='store_true',
             help='use this option to combine graphs into a single image')
     parser.add_argument('--version', '-v', action='version',

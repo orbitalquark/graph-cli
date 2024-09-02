@@ -47,6 +47,7 @@ class Graph:
     time_format_output = None
     no_tight = None
     legend_ncols = None
+    transparent_bg = None
     def __init__(self):
         self.xcol = None
         self.ycol = None
@@ -319,7 +320,7 @@ def create_graph(graphs):
                 color=l.get_color())
         if graph.output:
             apply_globals(plt, ax, graphs)
-            plt.savefig(graph.output)
+            plt.savefig(graph.output, transparent=Graph.transparent_bg)
         elif graph == graphs[-1]:
             apply_globals(plt, ax, graphs)
             plt.show()
@@ -327,7 +328,7 @@ def create_graph(graphs):
 def apply_globals(plt, ax, graphs):
     plt.xlabel(Graph.xlabel, fontsize=Graph.xlabel_fontsize)
     plt.ylabel(Graph.ylabel, fontsize=Graph.ylabel_fontsize)
-    plt.title(Graph.title)
+    plt.title(Graph.title, fontsize=Graph.fontsize)
     plt.setp(ax.get_xticklabels(), fontsize=Graph.xtick_fontsize,
         rotation=Graph.xtick_angle, horizontalalignment=Graph.xtick_align)
     plt.setp(ax.get_yticklabels(), fontsize=Graph.ytick_fontsize,
