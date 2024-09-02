@@ -300,6 +300,9 @@ def fill_global_args(args, df):
     # no-tight
     args.no_tight = (args.no_tight, args.no_tight)
 
+    # legend-ncols
+    args.legend_ncols = (args.legend_ncols, args.legend_ncols is not None)
+
 # replace None in array with value from default_vals
 def fill_list(lst, default_vals=None, length=None, map_fn=None):
     if type(lst) is not list:
@@ -448,6 +451,8 @@ def parse_args():
             default='-3:9')
     parser.add_argument('--no-tight', action='store_true',
             help='disable tight layout')
+    parser.add_argument('--legend-ncols', type=int, default=1,
+            help='legend number of columns')
     parser.add_argument('--chain', '-C', action='store_true',
             help='use this option to combine graphs into a single image')
     parser.add_argument('--version', '-v', action='version',

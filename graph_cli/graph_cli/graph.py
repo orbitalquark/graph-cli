@@ -46,6 +46,7 @@ class Graph:
     exponent_range = None
     time_format_output = None
     no_tight = None
+    legend_ncols = None
     def __init__(self):
         self.xcol = None
         self.ycol = None
@@ -402,7 +403,7 @@ def apply_globals(plt, ax, graphs):
     if not Graph.no_grid:
         plt.grid(True, alpha=Graph.grid_alpha, linestyle=Graph.grid,
             color=Graph.grid_color, linewidth=Graph.grid_width)
-    plt.legend()
+    plt.legend(ncols=Graph.legend_ncols)
     if not Graph.no_tight:
         plt.tight_layout()
 

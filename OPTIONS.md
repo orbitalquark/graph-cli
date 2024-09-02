@@ -51,6 +51,7 @@ These options persist across chains and are generally set only once.
 | --annotate | -a | | add annotation (text and arrow) to the graph (xpos=text \| xpos:ycol=text \| xtext:ytext:xpos:ypos=text) |
 | --time-format-output | -F | auto | time format to use for the x-axis |
 | --no-tight | | false | disable tight layout |
+| --legend-ncols | | 1 | number of columns in the legend |
 | --chain | -C | false | use this option to combine graphs into a single image |
 
 ### Line Specific Options
